@@ -6,6 +6,7 @@ public class Drive : MonoBehaviour
 {
     public float speed = 10.0f;
     public float rotationSpeed = 100.0f;
+    [SerializeField] private Animator tankAnimate;
 
     void Update()
     {
@@ -24,5 +25,7 @@ public class Drive : MonoBehaviour
 
         // Rotate around our y-axis
         transform.Rotate(0, rotation, 0);
+
+        tankAnimate.SetFloat("moveSpeed", translation);
     }
 }
